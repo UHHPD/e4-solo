@@ -1,0 +1,44 @@
+{
+  "tests": [
+    {
+      "name": "unit test",
+      "setup": "make",
+      "run": "./run",
+      "input": "",
+      "output": "running tests...\r\ntestReadingSize... ok\r\ntestReadingMeasurement... ok\r\ntestReadingBinEdges... ok\r\ntestReadingErrors... ok\r\ntestCopyConstructor... ok",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1
+    },
+    {
+      "name": "1d",
+      "setup": "make",
+      "run": "./run",
+      "input": "",
+      "output": "0.0112",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 10
+    },
+    {
+      "name": "2b",
+      "setup": "make",
+      "run": "./run",
+      "input": "",
+      "output": "0.794823",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 100
+    },
+    {
+      "name": "2c",
+      "setup": "make",
+      "run": "./run",
+      "input": "",
+      "output": "1.49072",
+      "comparison": "included",
+      "timeout": 10,
+      "points": 1000
+    }
+  ]
+}
