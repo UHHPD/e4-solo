@@ -122,8 +122,14 @@ int main() {
   Data datC("exp_C");
   Data datD("exp_D");
   vector<Data> data_sets({datA, datB, datC, datD});
-  average("test_average",datA,datB);
-  Data datAvg_A_B("test_average");
+
+  average("average_exp_A_exp_B",datA,datB);
+  Data datAvg_A_B("average_exp_A_exp_B");
+  average("average_exp_A_exp_B_exp_C",datAvg_A_B,datC);
+  Data datAvg_A_B_C("average_exp_A_exp_B_exp_C");
+  average("average_exp_A_exp_B_exp_C_exp_D",datAvg_A_B_C,datD);
+  Data datAvg_A_B_C_D("average_exp_A_exp_B_exp_C_exp_D");
+
 
 
 
@@ -153,6 +159,7 @@ int main() {
   cout << "average of experiment A and B in bin 27: " << datAvg_A_B.measurement(27)
        << " +/- " << datAvg_A_B.error(27) << endl;
   cout << "Chi-Square-Test of A: " << data_sets[0].chi_square(background_model) << endl;
+  cout << "Chi-Square-Test combination of all four datasets: " << datAvg_A_B_C_D.chi_square(background_model) << endl;
 
 
 
