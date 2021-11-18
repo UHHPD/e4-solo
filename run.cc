@@ -158,7 +158,7 @@ int main() {
           data_sets[2].checkCompatibility(data_sets[3], 2) << endl;
   cout << "average of experiment A and B in bin 27: " << datAvg_A_B.measurement(27)
        << " +/- " << datAvg_A_B.error(27) << endl;
-  cout << "Chi-Square-Test of A TEST: " << data_sets[0].chi_square(background_model) << endl;
+  cout << "Chi-Square-Test of A: " << data_sets[0].chi_square(background_model) << endl;
   cout << "Chi-Square-Test combination of all four datasets: " << datAvg_A_B_C_D.chi_square(background_model) << endl;
 
 
