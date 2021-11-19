@@ -46,20 +46,27 @@ Data::Data(const std::string& filename) {
   assertSizes();
 };
 
+//Method to determine the number of data points (and which ones) which differ by more than n standard deviations
 int Data::checkCompatibility(const Data& in, int n){
   int data_points = m_data.size();
   int compatible_points = 0;
+  std::vector<int> deviations;
   for (int i = 0; i < data_points; ++i){
     double diff = abs(m_data[i] - in.measurement(i));
     double diff_error = abs(m_errors[i] - in.error(i));
 
     if (diff > n * diff_error){
       ++compatible_points;
+      deviations.push_back(i);
     }
   }
+  std::cout << std::endl << "data points which differ by more than " << n << " standard deviations: ";
+  for (const auto &e : deviations) std::cout << e << " ";
+  std::cout << std::endl << "number of data points which differ by more than " << n << " standard deviations: ";
   return compatible_points;
 }
 
+//Method to test the hypethesis (func)
 double Data::chi_square(std::function<double (double)> func){
   int data_points = m_data.size();
   double chi_square_value = 0;
